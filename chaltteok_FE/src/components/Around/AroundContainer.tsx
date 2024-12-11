@@ -12,7 +12,7 @@ const AroundContainer: React.FC<AroundContainerProps> = ({ text }) => {
 export default AroundContainer;
 
 const StyledInput = styled.TextInput`
-  width: 300px;
+  width: 343px;
   height: 48px;
   border: 1px solid #ccc;
   border-radius: 10px;
