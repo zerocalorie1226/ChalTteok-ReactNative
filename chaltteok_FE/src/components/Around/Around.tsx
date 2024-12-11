@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import AroundContainer from './AroundContainer';
+import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
 
 // Images
@@ -13,23 +13,27 @@ const Around: React.FC = () => {
       {/* Header */}
       <Header>
         <BackButton onPress={() => console.log('Back button pressed')}>
-          <Icon source={leftArrow} />
+          <BackArrowIcon source={leftArrow} />
         </BackButton>
       </Header>
 
-      {/* Map Section */}
-      <MapSection>
-        <Map />
-      </MapSection>
 
-      {/* Around Section */}
-      <AroundForm>
-        <AroundContainer text="장소/지명으로도 검색해보세요." />
+
+      {/* AroundSearchForm Section */}
+      <AroundSearchForm>
+        <AroundSearchContainer text="장소/지명으로도 검색해보세요." />
         <FilterButton>
           <FilterText>가격</FilterText>
-          <Icon source={downArrowBlack} />
+          <DownArrowIcon source={downArrowBlack} />
         </FilterButton>
-      </AroundForm>
+      </AroundSearchForm>
+
+      {/* AroundMap Section */}
+      {/* <MapSection>
+        <Map />
+      </MapSection> */}
+
+
     </Container>
   );
 };
@@ -39,12 +43,12 @@ export default Around;
 // Styled Components
 const Container = styled.View`
   flex: 1;
-  background-color: #fff;
+  background-color: #f5f5f5;
 `;
 
 const Header = styled.View`
   padding: 16px;
-  background-color: #f5f5f5;
+  background-color: #fff;
 `;
 
 const BackButton = styled.TouchableOpacity`
@@ -52,20 +56,22 @@ const BackButton = styled.TouchableOpacity`
   height: 24px;
 `;
 
-const Icon = styled.Image`
+const BackArrowIcon = styled.Image`
   width: 24px;
   height: 24px;
-  resize-mode: contain;
+`;
+
+const DownArrowIcon = styled.Image`
+  width: 16px;
+  height: 16px;
 `;
 
 const MapSection = styled.View`
   flex: 1;
 `;
 
-const AroundForm = styled.View`
-  flex-direction: row;
+const AroundSearchForm = styled.View`
   align-items: center;
-  justify-content: space-between;
   padding: 16px;
 `;
 
@@ -77,6 +83,8 @@ const FilterButton = styled.TouchableOpacity`
   border: 1px solid #ccc;
   border-radius: 16px;
   background-color: #fff;
+  margin-right: 269px;
+  margin-top: 8px;
 `;
 
 const FilterText = styled.Text`
