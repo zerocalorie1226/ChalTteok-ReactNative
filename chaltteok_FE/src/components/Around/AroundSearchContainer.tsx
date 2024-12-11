@@ -3,11 +3,11 @@ import { Image } from 'react-native';
 import styled from 'styled-components/native';
 import searchIcon from '../../assets/Around/search.png';
 
-interface AroundContainerProps {
+interface AroundSearchContainerProps {
   text: string;
 }
 
-const AroundContainer: React.FC<AroundContainerProps> = ({ text }) => {
+const AroundSearchContainer: React.FC<AroundSearchContainerProps> = ({ text }) => {
   return (
     <>
     <SearchContainer>
@@ -18,7 +18,7 @@ const AroundContainer: React.FC<AroundContainerProps> = ({ text }) => {
   );
 };
 
-export default AroundContainer;
+export default AroundSearchContainer;
 
 const SearchContainer=styled.View`
   position:relative
