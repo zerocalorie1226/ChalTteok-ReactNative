@@ -10,14 +10,14 @@ const downArrowBlack = require('../../assets/Around/downBlack.png');
 const Around: React.FC = () => {
   return (
     <Container>
-      {/* Header*/}
+      {/* Header */}
       <Header>
         <BackButton onPress={() => console.log('뒤로가기 버튼 눌림')}>
           <BackArrowIcon source={leftArrow} />
         </BackButton>
       </Header>
 
-      {/* AroundSearchForm Section*/}
+      {/* AroundSearchForm Section */}
       <AroundSearchForm>
         <AroundSearchContainer text="장소/지명으로도 검색해보세요." />
         <FilterButton>
@@ -26,7 +26,7 @@ const Around: React.FC = () => {
         </FilterButton>
       </AroundSearchForm>
 
-      {/* Google Map Section*/}
+      {/* Google Map Section */}
       <MapSection>
         <Map />
       </MapSection>
@@ -45,6 +45,7 @@ const Container = styled.View`
 const Header = styled.View`
   padding: 16px;
   background-color: #fff;
+  z-index: 2; /* Header는 SearchForm 위에 있어야 하므로 z-index 추가 */
 `;
 
 const BackButton = styled.TouchableOpacity`
@@ -63,15 +64,23 @@ const DownArrowIcon = styled.Image`
 `;
 
 const MapSection = styled.View`
-  flex: 1;
+  flex: 1; /* 전체 화면을 채우고 AroundSearchForm 위에 위치 */
 `;
 
 const AroundSearchForm = styled.View`
-  align-items: center;
+  position: absolute;
+  top: 80px; /* Header 아래에 띄우기 위해 설정 */
+  left: 16px;
+  right: 16px;
   padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  elevation: 5; /* 안드로이드 그림자 */
+  z-index: 3; /* 지도의 위에 표시되도록 설정 */
 `;
 
 const FilterButton = styled.TouchableOpacity`
+  width: 67px;
   flex-direction: row;
   align-items: center;
   justify-content: center;
@@ -79,7 +88,6 @@ const FilterButton = styled.TouchableOpacity`
   border: 1px solid #ccc;
   border-radius: 16px;
   background-color: #fff;
-  margin-right: 269px;
   margin-top: 8px;
 `;
 
