@@ -30,6 +30,20 @@ const Around: React.FC = () => {
       <MapSection>
         <Map />
       </MapSection>
+
+      {/*  Store Preview Section */}
+      <StorePreviewSection>
+      <StorePreviewIntriSection>
+
+      </StorePreviewIntriSection>
+
+      <MiddleLine></MiddleLine>
+
+      <StorePreviewImagesSection>
+        
+      </StorePreviewImagesSection>
+      </StorePreviewSection>
+
     </Container>
   );
 };
@@ -68,15 +82,13 @@ const MapSection = styled.View`
 `;
 
 const AroundSearchForm = styled.View`
-  position: absolute;
-  top: 56px; /* Header 아래에 띄우기 위해 설정 */
-  left: 8px;
-  padding: 16px;
   border-radius: 16px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  elevation: 5; /* 안드로이드 그림자 */
-  z-index: 3; /* 지도의 위에 표시되도록 설정 */
+  z-index: 3;
+  align-self: center; /* 수평 중앙 정렬 */
+  position: absolute;
+  top: 9%;
 `;
+
 
 const FilterButton = styled.TouchableOpacity`
   width: 67px;
@@ -94,4 +106,30 @@ const FilterText = styled.Text`
   font-size: 14px;
   font-weight: 500;
   margin-right: 4px;
+`;
+
+const StorePreviewSection = styled.View`
+  margin: 0 auto;
+  width: 343px;
+  height: 237px;
+  border-radius: 12px;
+  background-color: skyblue;
+`;
+
+const StorePreviewIntriSection = styled.View`
+  width: 343px;
+  height: 108px;
+  background-color: yellow;
+`;
+
+const StorePreviewImagesSection = styled.View`
+  width: 343px;
+  height: 128px;
+  background-color: yellowgreen;
+`;
+
+const MiddleLine=styled.View`
+  left: 8px;
+  width: 343px;
+  height: 1px;
 `;
