@@ -3,23 +3,21 @@ import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
 
-// Images
+// 이미지 경로
 const leftArrow = require('../../assets/Around/left.png');
 const downArrowBlack = require('../../assets/Around/downBlack.png');
 
 const Around: React.FC = () => {
   return (
     <Container>
-      {/* Header */}
+      {/* Header*/}
       <Header>
-        <BackButton onPress={() => console.log('Back button pressed')}>
+        <BackButton onPress={() => console.log('뒤로가기 버튼 눌림')}>
           <BackArrowIcon source={leftArrow} />
         </BackButton>
       </Header>
 
-
-
-      {/* AroundSearchForm Section */}
+      {/* AroundSearchForm Section*/}
       <AroundSearchForm>
         <AroundSearchContainer text="장소/지명으로도 검색해보세요." />
         <FilterButton>
@@ -28,12 +26,10 @@ const Around: React.FC = () => {
         </FilterButton>
       </AroundSearchForm>
 
-      {/* AroundMap Section */}
-      {/* <MapSection>
+      {/* Google Map Section*/}
+      <MapSection>
         <Map />
-      </MapSection> */}
-
-
+      </MapSection>
     </Container>
   );
 };
