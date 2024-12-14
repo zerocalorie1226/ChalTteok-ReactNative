@@ -69,9 +69,8 @@ const MapSection = styled.View`
 
 const AroundSearchForm = styled.View`
   position: absolute;
-  top: 80px; /* Header 아래에 띄우기 위해 설정 */
-  left: 16px;
-  right: 16px;
+  top: 56px; /* Header 아래에 띄우기 위해 설정 */
+  left: 8px;
   padding: 16px;
   border-radius: 16px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
