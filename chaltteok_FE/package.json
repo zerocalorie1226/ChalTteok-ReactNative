@@ -32,7 +32,8 @@
     "react-native-web-maps": "^0.3.0",
     "react-native-webview": "^13.12.2",
     "recoil": "^0.7.7",
-    "styled-components": "^6.1.13"
+    "styled-components": "^6.1.13",
+    "expo-location": "~18.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
