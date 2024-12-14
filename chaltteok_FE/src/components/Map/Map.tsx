@@ -72,6 +72,7 @@ const Map: React.FC = () => {
         region={region} // 지도의 중심을 state에 따라 동적으로 변경
       >
         {/* 현재 위치를 파란색 원으로 표시 */}
+        {/* 테두리 */}
         <Circle
           center={currentLocation}
           radius={40} // 반경 50미터
@@ -79,16 +80,18 @@ const Map: React.FC = () => {
           fillColor="rgba(0, 122, 255, 0.3)" // 반투명 파란색 내부
           zIndex={1} // 레이어 순서
         />
+        {/* 두번째 원 */}
         <Circle
           center={currentLocation}
-          radius={25} // 반경 50미터
+          radius={25} // 반경 25미터
           strokeColor="rgba(0, 0, 0, 0)" // 테두리를 투명하게 설정
           fillColor="rgba(255, 255, 255, 1)" // 반투명 파란색 내부
           zIndex={2} // 레이어 순서
         />
+        {/* 첫번째 원 */}
         <Circle
           center={currentLocation}
-          radius={20} // 반경 50미터
+          radius={20} // 반경 20미터
           strokeColor="rgba(0, 0, 0, 0)" // 테두리를 투명하게 설정
           fillColor="rgba(0, 122, 255, 0.8)" // 반투명 파란색 내부
           zIndex={3} // 레이어 순서
