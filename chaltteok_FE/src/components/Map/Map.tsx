@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, TouchableOpacity } from 'react-native';
 import styled from 'styled-components/native';
-import MapView, { Marker, Region } from 'react-native-maps';
+import MapView, { Circle, Region } from 'react-native-maps';
 import * as Location from 'expo-location';
 
-const currentLocation = require('../../assets/Around/currentLocation.png'); // 현재 위치 이미지 불러오기
+const currentLocationIcon = require('../../assets/Around/currentLocation.png'); // 현재 위치 이미지 불러오기
 
 const Map: React.FC = () => {
   // 현재 위치와 관련된 상태
@@ -13,6 +13,11 @@ const Map: React.FC = () => {
     longitude: 126.9780, // 서울의 기본 경도
     latitudeDelta: 0.0922, // 확대 정도
     longitudeDelta: 0.0421, // 확대 정도
+  });
+
+  const [currentLocation, setCurrentLocation] = useState({
+    latitude: 37.5665,
+    longitude: 126.9780,
   });
 
   // 권한 요청 및 초기 위치 설정
@@ -33,6 +38,11 @@ const Map: React.FC = () => {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       });
+
+      setCurrentLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
     })();
   }, []);
 
@@ -46,6 +56,11 @@ const Map: React.FC = () => {
         latitudeDelta: 0.01, // 더 좁게 확대
         longitudeDelta: 0.01,
       });
+
+      setCurrentLocation({
+        latitude: location.coords.latitude,
+        longitude: location.coords.longitude,
+      });
     } catch (error) {
       Alert.alert('오류 발생', '현재 위치를 가져오는 중 오류가 발생했습니다.');
     }
@@ -55,19 +70,36 @@ const Map: React.FC = () => {
     <Container>
       <StyledMapView
         region={region} // 지도의 중심을 state에 따라 동적으로 변경
-        onRegionChangeComplete={(newRegion: Region) => setRegion(newRegion)} // 지도가 움직일 때 상태 업데이트
       >
-        {/* 현재 위치에 마커 추가 */}
-        <Marker
-          coordinate={{ latitude: region.latitude, longitude: region.longitude }}
-          title="현재 위치"
-          description="현재 내 위치"
+        {/* 현재 위치를 파란색 원으로 표시 */}
+        <Circle
+          center={currentLocation}
+          radius={40} // 반경 50미터
+          strokeColor="rgba(0, 0, 0, 0)" // 테두리를 투명하게 설정
+          fillColor="rgba(0, 122, 255, 0.3)" // 반투명 파란색 내부
+          zIndex={1} // 레이어 순서
         />
+        <Circle
+          center={currentLocation}
+          radius={25} // 반경 50미터
+          strokeColor="rgba(0, 0, 0, 0)" // 테두리를 투명하게 설정
+          fillColor="rgba(255, 255, 255, 1)" // 반투명 파란색 내부
+          zIndex={2} // 레이어 순서
+        />
+        <Circle
+          center={currentLocation}
+          radius={20} // 반경 50미터
+          strokeColor="rgba(0, 0, 0, 0)" // 테두리를 투명하게 설정
+          fillColor="rgba(0, 122, 255, 0.8)" // 반투명 파란색 내부
+          zIndex={3} // 레이어 순서
+        />
+        
       </StyledMapView>
+
 
       {/* 현재 위치로 이동하는 버튼 (이미지 사용) */}
       <ButtonContainer onPress={moveToCurrentLocation}>
-        <CurrentLocationIcon source={currentLocation} />
+        <CurrentLocationIcon source={currentLocationIcon} />
       </ButtonContainer>
     </Container>
   );
