@@ -6,6 +6,16 @@ import Map from '../Map/Map';
 // 이미지 경로
 const leftArrow = require('../../assets/Around/left.png');
 const downArrowBlack = require('../../assets/Around/downBlack.png');
+const LikeIcon= require('../../assets/Around/heart.png')
+const ScoreIcon=require('../../assets/Around/rating.png')
+const downArrowGray = require('../../assets/Around/downGray.png');
+
+const longText = "이 텍스트는 30자 이상으로 작성된 예시 문장입니다. 초과된 부분은 말줄임표로 표시됩니다. 확인해보세요";
+
+// 글자 제한: 30자로 제한하고 초과하면 '...' 추가
+const truncatedText = longText.length > 30 
+  ? longText.substring(0, 30) + '...' 
+  : longText;
 
 const Around: React.FC = () => {
   return (
@@ -34,7 +44,20 @@ const Around: React.FC = () => {
       {/*  Store Preview Section */}
       <StorePreviewSection>
       <StorePreviewIntriSection>
-
+        <StoreTitle>
+          찰칵 스튜디오
+        </StoreTitle>
+        <StoreLike source={LikeIcon} />
+        <StoreIntro>
+          {truncatedText}
+        </StoreIntro>
+        <StoreScoreIcon source={ScoreIcon}/>
+        <StoreScore>4.5</StoreScore>
+        <StoreAddressShort>
+          서울 강남구
+        
+        </StoreAddressShort>
+        <StoreAddressShortIcon source={downArrowGray}/>
       </StorePreviewIntriSection>
 
       <MiddleLine></MiddleLine>
@@ -114,6 +137,7 @@ const StorePreviewSection = styled.View`
   height: 237px;
   border-radius: 12px;
   background-color: skyblue;
+  position: relative;
 `;
 
 const StorePreviewIntriSection = styled.View`
@@ -133,3 +157,69 @@ const MiddleLine=styled.View`
   width: 343px;
   height: 1px;
 `;
+
+const StoreTitle=styled.Text`
+  width: 273px;
+  height: 24px;
+  position: absoulte;
+  left:20px;
+  top: 18px;
+  font-weight:700;
+  font-size: 16px;
+  line-height: 24px;
+`
+
+const StoreIntro=styled.Text`
+  position: absoulte;
+  left:20px;
+  top: -1px;
+  font-weight:400;
+  font-size: 14px;
+  line-height: 22px;
+`
+
+const StoreLike=styled.Image`
+  width: 24px;
+  height: 24px;
+  position: absoulte;
+  left: 307px;
+  top: -12px;
+`
+
+const StoreScoreIcon=styled.Image`
+  width: 16px;
+  height: 16px;
+  position: absoulte;
+  left: 20px;
+  top: 7px;
+`
+const StoreScore=styled.Text`
+  width: 26px;
+  height: 22px;
+  position: absoulte;
+  left: 40px;
+  top: -12px;
+  font-weight:400;
+  font-size: 14px;
+  line-height: 22px;
+`
+
+const StoreAddressShort=styled.Text`
+  width: 65px;
+  height: 22px;
+  position: absoulte;
+  left: 68px;
+  top: -34px;
+  font-weight:400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #888888;
+`
+
+const StoreAddressShortIcon=styled.Image`
+  width: 16px;
+  height: 16px;
+  position: absoulte; 
+  top: -53px;
+  left: 133px;
+`
