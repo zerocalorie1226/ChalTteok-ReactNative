@@ -152,16 +152,11 @@ const StorePreviewSection = styled.View`
   width: 343px;
   height: 237px;
   border-radius: 12px;
-  position: absolute; /* 부모 요소 기준으로 절대 위치 지정 */
-  left: 6%; /* 부모의 절반 위치 */
-  bottom: 5%; /* 화면 하단에서 5% 위로 띄움 */
-  z-index: 3; /* 다른 요소 위에 표시 */
+  position: absolute; 
+  left: 6.5%;
+  bottom: 5%; 
+  z-index: 3; 
   background-color: #fff; 
-  shadow-color: #000; 
-  shadow-offset: 0px 4px; 
-  shadow-opacity: 0.1; 
-  shadow-radius: 10px; 
-  elevation: 5; /* 안드로이드 그림자 효과 */
 `;
 
 
