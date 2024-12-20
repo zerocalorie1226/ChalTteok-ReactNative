@@ -8,27 +8,12 @@ import { ScrollView } from 'react-native';
 // 이미지 경로
 const leftArrow = require('../../assets/Around/left.png');
 const downArrowBlack = require('../../assets/Around/downBlack.png');
-const LikeIcon = require('../../assets/Around/heart.png')
-const ScoreIcon = require('../../assets/Around/rating.png')
-const downArrowGray = require('../../assets/Around/downGray.png');
-const emptyImage = require('../../assets/Around/img_empty.png')
-
-const longText = "이 텍스트는 30자 이상으로 작성된 예시 문장입니다. 초과된 부분은 말줄임표로 표시됩니다. 확인해보세요";
 
 // 글자 제한: 30자로 제한하고 초과하면 '...' 추가
-const truncatedText = longText.length > 30 
-  ? longText.substring(0, 30) + '...' 
-  : longText;
+
 
 const Around: React.FC = () => {
-  const images = [
-    emptyImage,
-    emptyImage,
-    emptyImage,
-    emptyImage,
-    emptyImage,
-    emptyImage
-  ];
+
   return (
     <Container>
       {/* Header */}
