@@ -74,15 +74,18 @@ const Around: React.FC = () => {
 
       <StorePreviewImagesSection>
       <StorePreviewImagesContainer 
-  horizontal 
-  showsHorizontalScrollIndicator={false}>
-  {images.map((image, index) => (
-    <StorePreviewImages 
-      key={index} 
-      source={image} 
-    />
-  ))}
-</StorePreviewImagesContainer>
+        horizontal 
+        showsHorizontalScrollIndicator={false}>
+        {images.map((image, index) => (
+          <StorePreviewImages 
+            key={index} 
+            source={image} 
+            style={{
+              marginRight: index === images.length - 1 ? 20 : 8, // 마지막 이미지인지 확인
+            }}
+          />
+        ))}
+      </StorePreviewImagesContainer>
       </StorePreviewImagesSection>
       </StorePreviewSection>
 
@@ -250,12 +253,12 @@ const StorePreviewImagesSection = styled.View`
 `;
 
 const StorePreviewImagesContainer = styled(ScrollView)`
-  width: 323px;
+  width: 343px;
   height: 88px;
   flex-direction: row;
   position: relative;
   top: 20px;
-  left: 20px;
+  padding-left: 20px;
 `;
 
 const StorePreviewImages = styled.Image`
