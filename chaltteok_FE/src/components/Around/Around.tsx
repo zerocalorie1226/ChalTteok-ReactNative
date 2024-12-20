@@ -9,7 +9,6 @@ import { ScrollView } from 'react-native';
 const leftArrow = require('../../assets/Around/left.png');
 const downArrowBlack = require('../../assets/Around/downBlack.png');
 
-// 글자 제한: 30자로 제한하고 초과하면 '...' 추가
 
 
 const Around: React.FC = () => {
