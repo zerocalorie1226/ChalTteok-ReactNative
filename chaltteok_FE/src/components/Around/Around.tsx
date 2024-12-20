@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
+import StorePreview from '../Around/AroundStorePreview';
 import { ScrollView } from 'react-native';
 
 // 이미지 경로
@@ -52,42 +53,9 @@ const Around: React.FC = () => {
       </MapSection>
 
       {/*  Store Preview Section */}
-      <StorePreviewSection>
-      <StorePreviewIntriSection>
-        <StoreTitle>
-          찰칵 스튜디오
-        </StoreTitle>
-        <StoreLike source={LikeIcon} />
-        <StoreIntro>
-          {truncatedText}
-        </StoreIntro>
-        <StoreScoreIcon source={ScoreIcon}/>
-        <StoreScore>4.5</StoreScore>
-        <StoreAddressShort>
-          서울 강남구
-        
-        </StoreAddressShort>
-        <StoreAddressShortIcon source={downArrowGray}/>
-      </StorePreviewIntriSection>
 
-      <MiddleLine></MiddleLine>
+        <StorePreview/>
 
-      <StorePreviewImagesSection>
-      <StorePreviewImagesContainer 
-        horizontal 
-        showsHorizontalScrollIndicator={false}>
-        {images.map((image, index) => (
-          <StorePreviewImages 
-            key={index} 
-            source={image} 
-            style={{
-              marginRight: index === images.length - 1 ? 20 : 8, // 마지막 이미지인지 확인
-            }}
-          />
-        ))}
-      </StorePreviewImagesContainer>
-      </StorePreviewImagesSection>
-      </StorePreviewSection>
 
     </Container>
   );
