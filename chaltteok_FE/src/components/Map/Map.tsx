@@ -122,13 +122,14 @@ const StyledMapView = styled(MapView)`
 
 const ButtonContainer = styled.TouchableOpacity`
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 286px; /* StorePreviewSection 위로 올리기 위해 위치 조정 */
+  right: 20px; /* 화면의 오른쪽에서 20px 떨어짐 */
   width: 50px;
   height: 50px;
   border-radius: 25px;
   justify-content: center;
   align-items: center;
+  z-index: 4; /* StorePreviewSection보다 위에 위치하기 위해 높은 값 설정 */
 `;
 
 const CurrentLocationIcon = styled.Image`

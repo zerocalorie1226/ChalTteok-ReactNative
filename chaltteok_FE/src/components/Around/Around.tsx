@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
+import { ScrollView } from 'react-native';
 
 // 이미지 경로
 const leftArrow = require('../../assets/Around/left.png');
@@ -72,14 +73,16 @@ const Around: React.FC = () => {
       <MiddleLine></MiddleLine>
 
       <StorePreviewImagesSection>
-        <StorePreviewImagesContainer horizontal showsHorizontalScrollIndicator={false}>
-          {images.map((image, index) => (
-            <StorePreviewImages 
-              key={index} 
-              source={image} 
-            />
-          ))}
-        </StorePreviewImagesContainer>
+      <StorePreviewImagesContainer 
+  horizontal 
+  showsHorizontalScrollIndicator={false}>
+  {images.map((image, index) => (
+    <StorePreviewImages 
+      key={index} 
+      source={image} 
+    />
+  ))}
+</StorePreviewImagesContainer>
       </StorePreviewImagesSection>
       </StorePreviewSection>
 
@@ -246,16 +249,14 @@ const StorePreviewImagesSection = styled.View`
 
 `;
 
-const StorePreviewImagesContainer=styled.View`
+const StorePreviewImagesContainer = styled(ScrollView)`
   width: 323px;
   height: 88px;
   flex-direction: row;
-
-  overflow: hidden; /* 넘치는 이미지 숨기기 */
   position: relative;
-  top:20px;
-  left:20px;
-`
+  top: 20px;
+  left: 20px;
+`;
 
 const StorePreviewImages = styled.Image`
 width: 88px;
