@@ -4,6 +4,7 @@ import styled from 'styled-components/native';
 import MapView, { Circle, Region } from 'react-native-maps';
 import * as Location from 'expo-location';
 import CurrentLocation from '../Map/CurrentLocation';
+import StorePreview from '../Around/AroundStorePreview';
 
 const Map: React.FC = () => {
   // 현재 위치와 관련된 상태
@@ -99,6 +100,8 @@ const Map: React.FC = () => {
 
       {/* 현재 위치로 이동하는 버튼 */}
       <CurrentLocation onPress={moveToCurrentLocation} />
+
+      <StorePreview/>
     </Container>
   );
 };

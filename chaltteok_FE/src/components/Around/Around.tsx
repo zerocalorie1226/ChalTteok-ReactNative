@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
-import StorePreview from '../Around/AroundStorePreview';
+
 
 
 // 이미지 경로
@@ -38,7 +38,7 @@ const Around: React.FC = () => {
 
       {/*  Store Preview Section */}
 
-        <StorePreview/>
+
 
 
     </Container>
