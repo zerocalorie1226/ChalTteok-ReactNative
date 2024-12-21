@@ -5,7 +5,7 @@ import MapView, { Circle, Region } from 'react-native-maps';
 import * as Location from 'expo-location';
 import CurrentLocation from './CurrentLocationButton';
 import SeeStorePreviewButton from './SeeStorePreviewButton';
-import StorePreview from '../AroundStorePreview';
+import StorePreview from '../AroundMain/AroundStorePreview';
 
 const Map: React.FC = () => {
   // 현재 위치와 관련된 상태
