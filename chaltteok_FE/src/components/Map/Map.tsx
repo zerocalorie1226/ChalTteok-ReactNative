@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Alert, TouchableOpacity } from 'react-native';
+import { Alert } from 'react-native';
 import styled from 'styled-components/native';
 import MapView, { Circle, Region } from 'react-native-maps';
 import * as Location from 'expo-location';
-
-const currentLocationIcon = require('../../assets/Around/currentLocation.png'); // 현재 위치 이미지 불러오기
+import CurrentLocation from '../Map/CurrentLocation';
 
 const Map: React.FC = () => {
   // 현재 위치와 관련된 상태
@@ -96,14 +95,10 @@ const Map: React.FC = () => {
           fillColor="rgba(0, 122, 255, 0.8)" // 반투명 파란색 내부
           zIndex={3} // 레이어 순서
         />
-        
       </StyledMapView>
 
-
-      {/* 현재 위치로 이동하는 버튼 (이미지 사용) */}
-      <ButtonContainer onPress={moveToCurrentLocation}>
-        <CurrentLocationIcon source={currentLocationIcon} />
-      </ButtonContainer>
+      {/* 현재 위치로 이동하는 버튼 */}
+      <CurrentLocation onPress={moveToCurrentLocation} />
     </Container>
   );
 };
@@ -118,20 +113,4 @@ const Container = styled.View`
 const StyledMapView = styled(MapView)`
   width: 100%;
   height: 100%;
-`;
-
-const ButtonContainer = styled.TouchableOpacity`
-  position: absolute;
-  bottom: 286px; /* StorePreviewSection 위로 올리기 위해 위치 조정 */
-  right: 20px; /* 화면의 오른쪽에서 20px 떨어짐 */
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  justify-content: center;
-  align-items: center;
-  z-index: 4; /* StorePreviewSection보다 위에 위치하기 위해 높은 값 설정 */
-`;
-
-const CurrentLocationIcon = styled.Image`
-
 `;
