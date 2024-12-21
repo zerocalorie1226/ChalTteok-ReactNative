@@ -3,8 +3,9 @@ import { Alert } from 'react-native';
 import styled from 'styled-components/native';
 import MapView, { Circle, Region } from 'react-native-maps';
 import * as Location from 'expo-location';
-import CurrentLocation from '../Map/CurrentLocation';
-import StorePreview from '../Around/AroundStorePreview';
+import CurrentLocation from './CurrentLocationButton';
+import SeeStorePreviewButton from './SeeStorePreviewButton';
+import StorePreview from '../AroundStorePreview';
 
 const Map: React.FC = () => {
   // 현재 위치와 관련된 상태
@@ -99,9 +100,15 @@ const Map: React.FC = () => {
       </StyledMapView>
 
       {/* 현재 위치로 이동하는 버튼 */}
-      <CurrentLocation onPress={moveToCurrentLocation} />
+      <ButtonsContainer>
+        <SeeStorePreviewButton/>
+        <CurrentLocation onPress={moveToCurrentLocation} />
+      </ButtonsContainer>
 
+      {/*  Store Preview Section */}
       <StorePreview/>
+
+
     </Container>
   );
 };
@@ -117,3 +124,10 @@ const StyledMapView = styled(MapView)`
   width: 100%;
   height: 100%;
 `;
+
+const ButtonsContainer = styled.View`
+position: absolute;
+bottom: 286px; /* StorePreviewSection 위로 올리기 위해 위치 조정 */
+right: 20px; /* 화면의 오른쪽에서 20px 떨어짐 */
+gap: 10px;
+`

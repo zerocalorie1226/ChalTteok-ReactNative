@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
-import Map from '../Map/Map';
+import Map from './Map/Map';
 
 
 
@@ -36,7 +36,7 @@ const Around: React.FC = () => {
         <Map />
       </MapSection>
 
-      {/*  Store Preview Section */}
+
 
 
 
