@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import AroundSearchContainer from './AroundSearchContainer';
 import Map from '../Map/Map';
 import StorePreview from '../Around/AroundStorePreview';
-import { ScrollView } from 'react-native';
+
 
 // 이미지 경로
 const leftArrow = require('../../assets/Around/left.png');
@@ -105,118 +105,4 @@ const FilterText = styled.Text`
   margin-right: 2px;
   padding-left: 8px;
 `;
-
-const StorePreviewSection = styled.View`
-  width: 343px;
-  height: 237px;
-  border-radius: 12px;
-  position: absolute; 
-  left: 6.5%;
-  bottom: 5%; 
-  z-index: 3; 
-  background-color: #fff; 
-`;
-
-
-const StorePreviewIntriSection = styled.View`
-  width: 343px;
-  height: 108px;
-`;
-
-
-
-const MiddleLine=styled.View`
-  width: 343px;
-  height: 1px;
-  background-color: #EAEAEA;
-`;
-
-const StoreTitle=styled.Text`
-  width: 273px;
-  height: 24px;
-  position: absoulte;
-  left:20px;
-  top: 18px;
-  font-weight:700;
-  font-size: 16px;
-  line-height: 24px;
-`
-
-const StoreIntro=styled.Text`
-  position: absoulte;
-  left:20px;
-  top: -1px;
-  font-weight:400;
-  font-size: 14px;
-  line-height: 22px;
-`
-
-const StoreLike=styled.Image`
-  width: 24px;
-  height: 24px;
-  position: absoulte;
-  left: 307px;
-  top: -12px;
-`
-
-const StoreScoreIcon=styled.Image`
-  width: 16px;
-  height: 16px;
-  position: absoulte;
-  left: 20px;
-  top: 7px;
-`
-const StoreScore=styled.Text`
-  width: 26px;
-  height: 22px;
-  position: absoulte;
-  left: 40px;
-  top: -12px;
-  font-weight:400;
-  font-size: 14px;
-  line-height: 22px;
-`
-
-const StoreAddressShort=styled.Text`
-  width: 65px;
-  height: 22px;
-  position: absoulte;
-  left: 68px;
-  top: -34px;
-  font-weight:400;
-  font-size: 14px;
-  line-height: 22px;
-  color: #888888;
-`
-
-const StoreAddressShortIcon=styled.Image`
-  width: 16px;
-  height: 16px;
-  position: absoulte; 
-  top: -53px;
-  left: 133px;
-`
-
-const StorePreviewImagesSection = styled.View`
-  width: 343px;
-  height: 128px;
-
-
-`;
-
-const StorePreviewImagesContainer = styled(ScrollView)`
-  width: 343px;
-  height: 88px;
-  flex-direction: row;
-  position: relative;
-  top: 20px;
-  padding-left: 20px;
-`;
-
-const StorePreviewImages = styled.Image`
-width: 88px;
-height: 88px;
-border-radius: 6px;
-margin-right: 8px;
-`
 
