@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from 'react-native';
 import styled from 'styled-components/native';
-import searchIcon from '../../assets/Around/search.png';
+import searchIcon from '../../../assets/Around/search.png';
 
 interface AroundSearchContainerProps {
   text: string;

@@ -3,10 +3,10 @@ import styled from 'styled-components/native';
 import { ScrollView } from 'react-native';
 
 // 이미지 경로
-const LikeIcon = require('../../assets/Around/heart.png');
-const ScoreIcon = require('../../assets/Around/rating.png');
-const downArrowGray = require('../../assets/Around/downGray.png');
-const emptyImage = require('../../assets/Around/img_empty.png');
+const LikeIcon = require('../../../assets/Around/heart.png');
+const ScoreIcon = require('../../../assets/Around/rating.png');
+const downArrowGray = require('../../../assets/Around/downGray.png');
+const emptyImage = require('../../../assets/Around/img_empty.png');
 
 const longText = "이 텍스트는 30자 이상으로 작성된 예시 문장입니다. 초과된 부분은 말줄임표로 표시됩니다. 확인해보세요";
 

@@ -6,8 +6,8 @@ import Map from '../Map/Map';
 
 
 // 이미지 경로
-const leftArrow = require('../../assets/Around/left.png');
-const downArrowBlack = require('../../assets/Around/downBlack.png');
+const leftArrow = require('../../../assets/Around/left.png');
+const downArrowBlack = require('../../../assets/Around/downBlack.png');
 
 
 
