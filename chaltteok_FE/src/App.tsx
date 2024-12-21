@@ -6,7 +6,7 @@ import AroundFilterPopup from './components/Around/AroundMain/AroundFilterPopup'
 const App: React.FC = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Around />
+      <AroundFilterPopup />
     </SafeAreaView>
   );
 };
